@@ -1,0 +1,3 @@
+diamond = "\t\t\t\t\t\t\t\t\t\t\t* \n\t\t\t\t\t\t\t\t\t\t*\t\t* \n\t\t\t\t\t\t\t\t\t*\t\t\t\t* \n\t\t\t\t\t\t\t\t*\t\t Hello my name is\t\t* \n\t\t\t\t\t\t\t*\t\t\t Ahny Leonado \t\t\t\t* \n\t\t\t\t\t\t\t\t*\t\t\t\t\t\t* \n\t\t\t\t\t\t\t\t\t*\t\t\t\t* \n\t\t\t\t\t\t\t\t\t\t*\t\t* \n\t\t\t\t\t\t\t\t\t\t\t*"
+
+print (diamond)
