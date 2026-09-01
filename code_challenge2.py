@@ -1,34 +1,37 @@
-money = 11147
+money = int(input('Enter money to deposit-->'))
 
-print("Money to deposit: ", money)
+print('================ PH PESO DENOMINATION BREAK DOWN ====================')
+print('Money to deposit ---->',money,'php')
 
-thousand = money//1000
-money = money - thousand*1000
-fivehund = money//500
-money = money - fivehund*500
-twohund = money//200
-money = money - twohund*200
-onehund = money//100
-money = money-onehund*100
-fifty = money//50
-money = money - fifty*50
-twenty = money//20
-money = money - twenty*20
-ten= money//10
-money = money - ten*10
-five = money//5
-money = money- five*5
-one = money//1
-money = money - one
+thousan= money // 1000
+thousan_rem = money % 1000
 
+fivehund = thousan_rem // 500
+fivehund_rem = thousan_rem % 500
+twohund = fivehund_rem // 200
+twohund_rem = fivehund_rem % 200
+onehund = twohund_rem // 100
+onehund_rem = twohund_rem %100
+fift = onehund_rem // 50
+fift_rem = onehund_rem % 50
+twent= fift_rem // 20
+twent_rem = fift_rem % 20
+ten= twent_rem // 10
+ten_rem = twent_rem % 10
+five = ten_rem // 5
+ten_rem = ten_rem % 5
+one = ten_rem // 1
+one_rem = ten_rem % 1
 
-print("you have ", thousand,"quantity of 1000")
-print("you have ", fivehund,"quantity of 500")
-print("you have ", twohund,"quantity of 200")
-print("you have ", onehund,"quantity of 100")
-print("you have ", fifty,"quantity of 50")
-print("you have ", twenty,"quantity of 20")
-print("you have ", ten,"quantity of 10")
-print("you have ", five,"quantity of 5")
-print("you have ", one,"quantity of 1")
+print('1000 --->', thousan)
+print('500 --->', fivehund)
+print('200 --->', twohund)
+print('100 --->', onehund)
+print('50 --->', fift)
+print('20 --->', twent)
+print('10 --->', ten)
+print('5 --->', five)
+print('1 --->', one)
+
+print('=====================================================================')
 
