@@ -4,9 +4,9 @@ sender = input('Enter sender name ---> ')
 type = input('What type of item is it? ---> ')
 weight = float(input('How heavy? ---> '))
 distance = float(input('How far? ---> '))
-is_Fragile = input('Is the item fragile? ---> ')
-is_Express = input('Is it rush? ---> ')
-is_International = input(' Is the shippping international? ---> ')
+is_Fragile = bool(eval(input('Is the item fragile? ---> ')))
+is_Express = bool(eval(input('Is it rush? ---> ')))
+is_International = bool(eval(input(' Is the shippping international? ---> ')))
 
 #prints
 
@@ -16,34 +16,28 @@ print('Item: ',type)
 print('Weight: ',weight,'kg')
 print('Distance: ',distance,'km')
 
-if is_Fragile == 'True' :
-	print('The item is fragile')
-else:
-	print('The item is not fragile')
+#basecost
+x = weight * 2.50
+y = distance * 0.15
+base_cost = x+y
 
-if is_Express == 'True':
-	print('priority')
-else:
-	print('not priority')
+if weight <=2.0 and distance <=100 and is_Express == False and is_International == False :
+	print('You have free shipping')
+	total = 0.00
 
-if is_International == 'True':
-	print('International package')
-else:
-	print('Local package')
+elif is_International == True and is_Express == True :
+	print('Your package is International Express')
+	total = (base_cost * 1.40) + 50 
 
-base_cost = ( weight * 2.50) + ( distance * 0.15)
-
-if weight <=2.0 or distance <=100 and is_Express == 'False' and is_International == 'False' :
-	print('You have free shipping! Total: $0.00')
-
-elif is_International == 'True' and is_Express == 'True' :
-	print('Total:', (base_cost * 1.40) + 50 )
-
-elif is_Express == 'True' or is_International == 'True' and weight > 20:
-	print('Total:', (base_cost * 1.20) + 25)
+elif is_Express == True or is_International == True and weight > 20:
+	print('Your package is Express/Heavy International')
+	total = (base_cost * 1.20) + 25
 
 elif weight > 30 or distance > 1000 :
-	print('Total:', base_cost + 30)
+	print('Your package is Oversized')
+	total =  base_cost + 30
 else:
-	print(base_cost)
+	print('Package is Standard Rate')
+	total = base_cost
 
+print('Your total is = $', total)
